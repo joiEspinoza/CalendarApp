@@ -25,7 +25,12 @@ const customStyles =
     }
 };
 
-Modal.setAppElement('#root');
+/////
+
+if( process.env.NODE_ENV !== "test" )
+{
+    Modal.setAppElement('#root');
+};
 
 //////
 
@@ -164,6 +169,7 @@ const CalendarModal = () =>
           closeTimeoutMS={ 200 }
           className="modal"
           overlayClassName="modal-fondo"
+          ariaHideApp={ !process.env.NODE_ENV === "test" }
         >
 
         <h1> { activeEvents ? "Editar evento" : "Nuevo evento" } </h1>

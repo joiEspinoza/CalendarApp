@@ -27,7 +27,6 @@ const LoginScreen = () =>
     const handleLogin = ( e ) =>
     {
         e.preventDefault();
-
         dispatch( startLogin( correoIngreso, passwordIngreso  ) );
 
     };
